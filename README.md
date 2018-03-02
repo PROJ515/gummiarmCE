@@ -65,6 +65,7 @@ Remember, this is direct access to joint angles, so it will bump into things if 
 Currently the latest moveit model for the handshake is under development, so the mesh files for it are not showing the right information and there will be a big error on end-effector position. With that being said, one should still be able to test path planning with moveit if gummi.yaml is correct. 
 
 Run the moveit demo:
+
 ```$ roslaunch gummi_moveit demo.launch```
 
 # TO-DOs:
