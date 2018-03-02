@@ -5,19 +5,6 @@ This is the first bundle from all the current repositories from GummiArmCE and t
 
 **ATTENTION:** This bundle was not tested yet and should be used with caution, as errors in robotics software may cause damage to property and personnel. 
 
-## Important testing, i.e., things that can break the robot and hurt people should include: ##
-- Joint limits (minAngle, maxAngle), Servo offset values (servoOffset, servoRange), motor min and max parameters
-- Dynamixel motor modes - check correct multiturn settings where applicable 
-- Hardware assembly problems - e. g. 180 degree rotations of 3d printed parts and motor 
-
-## Additional testing and tunning necessary to make this release into a production one ##
-- Complete ee_handshake urdf and srdf model with appropriate mesh files
-- Fix or remove broken .launch files
-- Implement fastswitch model
-- Finish .yaml base and ee autogeneration
-- Remove unnecessary files
-- Test end-effector position in move-it
-
 # Before you run it
 
 1. Change the USB ids in src/gummi_base_template/manager.launch
@@ -73,3 +60,18 @@ Currently the latest moveit model for the handshake is under development, so the
 
 Run the moveit demo:
 `$ roslaunch gummi_moveit demo.launch`
+
+# TO-DOs:
+
+## Important testing, i.e., things that can break the robot and hurt people should include: ##
+- Joint limits (minAngle, maxAngle), Servo offset values (servoOffset, servoRange), motor min and max parameters
+- Dynamixel motor modes - check correct multiturn settings where applicable 
+- Hardware assembly problems - e. g. 180 degree rotations of 3d printed parts and motor 
+
+## Additional testing and tunning necessary to make this release into a production one ##
+- Complete ee_handshake urdf and srdf model with appropriate mesh files
+- Fix or remove broken .launch files
+- Implement fastswitch model
+- Finish .yaml base and ee autogeneration
+- Remove unnecessary files
+- Test end-effector position in move-it
