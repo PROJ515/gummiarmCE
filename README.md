@@ -110,7 +110,6 @@ Open an issue and try to be as descriptive as possible (error messages or where 
 ### Additional testing and tunning necessary to make this release into a production one ##
 - Complete ee_handshake urdf and srdf model with appropriate mesh files
 - Fix or remove broken .launch files
-- Implement fastswitch model
 - Finish .yaml base and ee autogeneration
 - Remove unnecessary files
 - Test end-effector position in move-it
