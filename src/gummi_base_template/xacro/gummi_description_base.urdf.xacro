@@ -292,4 +292,65 @@
       velocity="0" /> -->
     <limit effort="0" lower="-1.56" upper="1.56" velocity="1.0"/>
   </joint>
+
+  <!-- j5_Link -->
+<link
+  name="lowerarm_preroll_u">
+  <inertial>
+    <origin
+      xyz="0.0480680914336555 -0.0154122894983864 -0.00982448117120333"
+      rpy="0 0 0" />
+    <mass
+      value="0.0573776116734678" />
+    <inertia
+      ixx="1.98794332161084E-05"
+      ixy="-1.22203388710061E-06"
+      ixz="5.63209252093047E-06"
+      iyy="4.47548061016055E-05"
+      iyz="2.39819214170021E-07"
+      izz="4.43764478788868E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 -.017 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j5_Link.STL" />
+    </geometry>
+    <material name="">
+      <color rgba="1 0.7 0.7 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 -.017 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j5_Link.STL" />
+    </geometry>
+  </collision>
+</link>
+
+<!-- j5 -->
+<joint
+  name="elbow"
+  type="revolute">
+  <origin
+    xyz="0 0.01475 -0.19105"
+    rpy="0 0 0" />
+  <parent
+    link="upperarm" />
+  <child
+    link="lowerarm_preroll_u" />
+  <axis
+    xyz="0 -1 0" />
+  <!-- <limit
+    lower="-1.5708"
+    upper="1.5708"
+    effort="0"
+    velocity="0" /> -->
+  <limit effort="0" lower="-0.72" upper="0.32" velocity="1.0"/>
+</joint>
 </robot>

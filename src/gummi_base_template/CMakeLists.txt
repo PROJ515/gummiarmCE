@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(gummi_base_ghost)
+project(gummi_base_template)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
 # add_definitions(-std=c++11)
@@ -8,6 +8,7 @@ project(gummi_base_ghost)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin             REQUIRED COMPONENTS xacro)
+find_python_module(ruamel.yaml REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -100,7 +101,7 @@ find_package(catkin             REQUIRED COMPONENTS xacro)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES gummi_base_ghost
+#  LIBRARIES gummi_base_template
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -115,7 +116,7 @@ catkin_package(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/gummi_base_ghost.cpp
+#   src/${PROJECT_NAME}/gummi_base_template.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -126,7 +127,7 @@ catkin_package(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/gummi_base_ghost_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/gummi_base_template_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -199,5 +200,10 @@ WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 
 ################ TO GENERATE UDRF FILE #################
 add_custom_target(urdfgen ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_urdf.sh
+WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)
+
+################ TO GENERATE YAML FILES #################
+add_custom_target(yamlgen ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_yaml.sh
 WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )

@@ -10,7 +10,7 @@ echo "** Creating URDF file from gummi_description_base.urdf.xacro and gummi_des
 
 . ../../devel/setup.bash
 
-export GUMMIBASEPATH=${PWD}
+export GUMMIBASEPATH=${PWD}/../gummi_base_${ROS_GUMMI_BASE}
 export GUMMIEEPATH=${PWD}/../gummi_ee_${ROS_GUMMI_EE}
 rosrun xacro xacro --inorder ${GUMMIBASEPATH}/xacro/gummi_description.urdf.xacro base:=${GUMMIBASEPATH} ee:=${GUMMIEEPATH} > ${GUMMIBASEPATH}/urdf/gummi_description.urdf
 
